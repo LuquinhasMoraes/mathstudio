@@ -1,0 +1,6 @@
+{
+    "name": "Math Studio App",
+    "description": "App for training operations math",
+    "repository": "https://github.com/herokuapp/mathchallenger",
+    "keywords": ["express", "node", "socket.io"]
+}
