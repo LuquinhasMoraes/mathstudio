@@ -13,19 +13,10 @@ io.on("connection", socket => {
         io.emit("users-started", { started: started, event: "started" });
     });
 
-    socket.on("numberA", numberA => {
-        socket.numberA = numberA;
-        io.emit("numberA-changed", { numberA: numberA, event: "number A" });
-    });
-
-    socket.on("numberB", numberB => {
-        socket.numberB = numberB;
-        io.emit("numberB-changed", { numberB: numberB, event: "number B" });
-    });
-
-    socket.on("responseUser", data => {
-        console.log(data);
-        io.emit("responseUser-changed", {responseUser: data});
+    socket.on("operation-question", _operationQuestion => {
+        console.log(operationQuestion);
+        socket.operationQuestion = _operationQuestion;
+        io.emit("operation-question-changed", { operationQuestion: _operationQuestion, event: "operation question changed" });
     });
 
     socket.on("disconnect", () => {
