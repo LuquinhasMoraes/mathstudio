@@ -14,7 +14,6 @@ io.on("connection", socket => {
     });
 
     socket.on("operation-question", _operationQuestion => {
-        console.log(operationQuestion);
         socket.operationQuestion = _operationQuestion;
         io.emit("operation-question-changed", { operationQuestion: _operationQuestion, event: "operation question changed" });
     });
