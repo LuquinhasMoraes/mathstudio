@@ -18,6 +18,11 @@ io.on("connection", socket => {
         io.emit("operation-question-changed", { operationQuestion: _operationQuestion, event: "operation question changed" });
     });
 
+    socket.on("interval-id", _intervalId => {
+        socket.intervalId = _intervalId;
+        io.emit("interval-id-changed", { intervalId: _intervalId, event: "intervalId changed" });
+    });
+
     socket.on("disconnect", () => {
         io.emit("users-changed", { user: socket.user, event: "desconectado" });
     });
